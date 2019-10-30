@@ -1,0 +1,31 @@
+{
+  "name": "recipesapp",
+  "version": "1.0.0",
+  "description": "A website with kids recipes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently — kill-others \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "build": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "recipes",
+    "kids",
+    "FullStack",
+    "React",
+    "Redux",
+    "Koa",
+    "MongoDB"
+  ],
+  "author": "Andrey Reutov",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.0.0"
+  },
+  "dependencies": {
+    "config": "^3.2.3",
+    "mongoose": "^5.7.5"
+  }
+}

@@ -1,0 +1,218 @@
+[
+    {
+        "fullName": "Зеленый горошек вареный",
+        "displayName": "Зеленый горошек",
+        "category": "Овощи",
+        "minAgeAllowedInMonths": 6
+    },
+    {
+        "fullName": "Цуккини вареный",
+        "displayName": "Цуккини",
+        "category": "Овощи",
+        "minAgeAllowedInMonths": 4
+    },
+    {
+        "fullName": "Мята свежая",
+        "displayName": "Мята",
+        "category": "Зелень",
+        "minAgeAllowedInMonths": 8
+    },
+    {
+        "fullName": "Вода",
+        "displayName": "Вода",
+        "category": "Жидкость",
+        "minAgeAllowedInMonths": 4
+    },
+    {
+        "fullName": "Сок лимона",
+        "displayName": "Сок лимона",
+        "category": "Жидкость",
+        "minAgeAllowedInMonths": 12
+    },
+    {
+        "fullName": "Сок лайма",
+        "displayName": "Сок лайма",
+        "category": "Жидкость",
+        "minAgeAllowedInMonths": 12
+    },
+    {
+        "fullName": "Кокосовое масло",
+        "displayName": "Кокосовое масло",
+        "category": "Масло",
+        "minAgeAllowedInMonths": 7
+    },
+    {
+        "fullName": "Базилик свежий",
+        "displayName": "Базилик",
+        "category": "Зелень",
+        "minAgeAllowedInMonths": 8
+    },
+    {
+        "fullName": "Петрушка свежая",
+        "displayName": "Петрушка",
+        "category": "Зелень",
+        "minAgeAllowedInMonths": 8
+    },
+    {
+        "fullName": "Имбирь свежий",
+        "displayName": "Имбирь (корень)",
+        "category": "Пряности",
+        "minAgeAllowedInMonths": 12
+    },
+    {
+        "fullName": "Груша вареная",
+        "displayName": "Груша",
+        "category": "Фрукты",
+        "minAgeAllowedInMonths": 4
+    },
+    {
+        "fullName": "Кардамон сушеный",
+        "displayName": "Кардамон",
+        "category": "Пряности",
+        "minAgeAllowedInMonths": 8
+    },
+    {
+        "fullName": "Корица молотая",
+        "displayName": "Корица",
+        "category": "Пряности",
+        "minAgeAllowedInMonths": 10
+    },
+    {
+        "fullName": "Мускатный орех",
+        "displayName": "Мускатный орех",
+        "category": "Пряности",
+        "minAgeAllowedInMonths": 8
+    },
+    {
+        "fullName": "Розмарин",
+        "displayName": "Розмарин",
+        "category": "Пряности",
+        "minAgeAllowedInMonths": 8
+    },
+    {
+        "fullName": "Батат запеченный",
+        "displayName": "Батат",
+        "category": "Овощи",
+        "minAgeAllowedInMonths": 4
+    },
+    {
+        "fullName": "Карри",
+        "displayName": "Карри",
+        "category": "Пряности",
+        "minAgeAllowedInMonths": 8
+    },
+    {
+        "fullName": "Грудное молоко",
+        "displayName": "Грудное молоко",
+        "category": "Жидкость",
+        "minAgeAllowedInMonths": 4
+    },
+    {
+        "fullName": "Готовая смесь",
+        "displayName": "Готовая смесь",
+        "category": "Жидкость",
+        "minAgeAllowedInMonths": 4
+    },
+    {
+        "fullName": "Тмин",
+        "displayName": "Тмин",
+        "category": "Пряности",
+        "minAgeAllowedInMonths": 8
+    },
+    {
+        "fullName": "Гвоздика",
+        "displayName": "Гвоздика",
+        "category": "Пряности",
+        "minAgeAllowedInMonths": 8
+    },
+    {
+        "fullName": "Чеснок свежий",
+        "displayName": "Чеснок",
+        "category": "Овощи",
+        "minAgeAllowedInMonths": 12
+    },
+    {
+        "fullName": "Тимьян свежий",
+        "displayName": "Тимьян",
+        "category": "Зелень",
+        "minAgeAllowedInMonths": 12
+    },
+    {
+        "fullName": "Имбирь молотый",
+        "displayName": "Имбирь (порошок)",
+        "category": "Пряности",
+        "minAgeAllowedInMonths": 8
+    },
+    {
+        "fullName": "Клубника вареная",
+        "displayName": "Клубника",
+        "category": "Ягоды",
+        "minAgeAllowedInMonths": 10
+    },
+    {
+        "fullName": "Полба",
+        "displayName": "Полба",
+        "category": "Злаки",
+        "minAgeAllowedInMonths": 7
+    },
+    {
+        "fullName": "Батат вареный",
+        "displayName": "Батат",
+        "category": "Овощи",
+        "minAgeAllowedInMonths": 4
+    },
+    {
+        "fullName": "Киноа",
+        "displayName": "Киноа",
+        "category": "Злаки",
+        "minAgeAllowedInMonths": 8
+    },
+    {
+        "fullName": "Клубника свежая",
+        "displayName": "Клубника",
+        "category": "Ягоды",
+        "minAgeAllowedInMonths": 12
+    },
+    {
+        "fullName": "Ванильный экстракт",
+        "displayName": "Ванильный экстракт",
+        "category": "Пряности",
+        "minAgeAllowedInMonths": 10
+    },
+    {
+        "fullName": "Персик свежий",
+        "displayName": "Персик",
+        "category": "Фрукты",
+        "minAgeAllowedInMonths": 12
+    },
+    {
+        "fullName": "Голубика свежая",
+        "displayName": "Голубика",
+        "category": "Ягоды",
+        "minAgeAllowedInMonths": 8
+    },
+    {
+        "fullName": "Малина свежая",
+        "displayName": "Малина",
+        "category": "Ягоды",
+        "minAgeAllowedInMonths": 8
+    },
+    {
+        "fullName": "Черника свежая",
+        "displayName": "Черника",
+        "category": "Ягоды",
+        "minAgeAllowedInMonths": 8
+    },
+    {
+        "fullName": "Яблоко свежее",
+        "displayName": "Яблоко",
+        "category": "Фрукты",
+        "minAgeAllowedInMonths": 12
+    },
+    {
+        "fullName": "Груша свежая",
+        "displayName": "Груша",
+        "category": "Фрукты",
+        "minAgeAllowedInMonths": 12
+    }
+]
