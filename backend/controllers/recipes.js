@@ -8,16 +8,18 @@ async function getRecipes(ctx)
     const reqObj = {};
     if (query) reqObj.$text = {$search: query};
     if (age) reqObj.allowedAge = { $lte: age }
-    if (tags) reqObj.tags = { $elemMatch: { tagName: id1 } } //{ $all: tags }
-
+    if (tags) reqObj.tags = {$all: tags } //{ $all: tags }
+    if (products) reqObj.ingredients = {$elemMatch: {product: {$all: products }}}
     const recipes = await Recipe
-        .find(reqObj, {score: {$meta: 'textScore'}})
-        .populate('ingredients.product')
-        .populate('optionalIngredients.product')
-        .populate('tags')
+        .find(reqObj, {optionalIngredients:1, ingredients:1, recipeName: 1, allowedAge: 1, score: {$meta: 'textScore'}})
+        //.populate('ingredients.product')
+        //.populate('optionalIngredients.product')
+        //.populate('tags')
         .sort({score: {$meta: 'textScore'}})
         .limit(10);
-    
+    // Populate здесь будет не нужен, подумать насчет выполнения $lookup
+    // Реализовать пагинацию
+
     ctx.body = {recipes}
    
 }
