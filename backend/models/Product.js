@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const connection = require('../libs/mongooseConnection');
 
 const productSchema = new mongoose.Schema({
-    fullName: { // for 
+    fullName: { 
       type: String,
       required: true,
     },
