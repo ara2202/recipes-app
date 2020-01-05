@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index",
+    "dev": "nodemon index.js",
     "start": "cross-env NODE_ENVIRONMENT=production node index"
   },
   "keywords": [],
