@@ -27,7 +27,7 @@ module.exports = (app) => {
   }));
   
   app.use(respond());
-  //app.use(passport.initialize());  //TODO HERE
+  //app.use(passport.initialize());  //TODO: сделать авторизацию
 
   app.use(router.routes());
   app.use(router.allowedMethods());
