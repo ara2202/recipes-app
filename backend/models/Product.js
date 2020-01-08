@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const DisplayName = require('./DisplayName');
 const ObjectId = mongoose.Schema.Types.ObjectId;
 const connection = require('../libs/mongooseConnection');
 
@@ -27,5 +26,11 @@ const productSchema = new mongoose.Schema({
     },
     recipesObj: Object
   });
+
+// productSchema.pre('save', async function(next) {
+//
+//     await this.populate('displayName');
+//     next();
+// });
 
 module.exports = connection.model('Product', productSchema);

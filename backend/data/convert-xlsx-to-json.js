@@ -36,8 +36,8 @@ for (const name of workbookRecipes.SheetNames) {
   const rawRecipes = XLSX.utils.sheet_to_json(sheet);
   
   for (const recipe of rawRecipes) {
-    const {recipeName, product, amount, optProduct, 
-            displayOptAmount, displayAmount, tags, images} = recipe;
+    const {recipeName, product, amount, displayAmount, optProduct,
+            amountOpt, displayAmountOpt, tags, images} = recipe;
     if (recipeName) {
       if (newRecipe) recipes.push(newRecipe);
 
@@ -47,13 +47,15 @@ for (const name of workbookRecipes.SheetNames) {
       newRecipe.ingredients = [{product, amount, displayAmount}];
       newRecipe.optionalIngredients = [{
         product: optProduct,
-        displayAmount: displayOptAmount
+        amount: amountOpt,
+        displayAmount: displayAmountOpt
       }];
       delete newRecipe.product;
       delete newRecipe.amount;
       delete newRecipe.displayAmount;
       delete newRecipe.optProduct;
-      delete newRecipe.displayOptAmount;
+      delete newRecipe.amountOpt;
+      delete newRecipe.displayAmountOpt;
 
     } else
     {
@@ -62,7 +64,8 @@ for (const name of workbookRecipes.SheetNames) {
       if (product) newRecipe.ingredients.push({product, amount, displayAmount});
       if (optProduct) newRecipe.optionalIngredients.push({
         product: optProduct,
-        displayAmount: displayOptAmount
+        amount: amountOpt,
+        displayAmount: displayAmountOpt
       });
     }
   } 

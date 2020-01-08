@@ -2,15 +2,15 @@ const Recipe = require('../models/Recipe');
 
 async function getRecipes(ctx) 
 {
-    const {age, tags, products, not_include} = ctx.request.body;
-    const {query} = ctx.query;
-    
+    const {tags, productIds, not_include} = ctx.request.body;
+    const {query, page, age, limit} = ctx.query;
+    const lim = parseInt(limit)
     const reqObj = {};
     if (query) reqObj.$text = {$search: query};
     if (age) reqObj.allowedAge = { $lte: age }
     if (tags) reqObj.tags = {$all: tags } //{ $all: tags }
-    if (products) reqObj.ingredients = {$elemMatch: {product: {$all: products }}}
-    
+    if (productIds) reqObj['ingredients.displayName'] = {$all: productIds};
+
     // TODO: Поиск надо делать не по id-шникам а по displayName продукта, т.е. ищем
     // не "вареная картошка", а просто "картошка"
     const recipes = await Recipe
@@ -19,9 +19,9 @@ async function getRecipes(ctx)
         //.populate('optionalIngredients.product')
         //.populate('tags')
         .sort({score: {$meta: 'textScore'}})
-        .limit(10);
+        .skip(page ? (page - 1) * lim : 0)
+        .limit(lim || 10);
     // Populate здесь будет не нужен, подумать насчет выполнения $lookup
-    // Реализовать пагинацию
 
     ctx.body = {recipes}
    

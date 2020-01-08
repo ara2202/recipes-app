@@ -16,15 +16,9 @@ const displayNames = require('./JSON/displayNames.json');
   await Recipe.deleteMany();
   await DisplayName.deleteMany();
   
-  const productsMap = {/*
-    [fullName] : id
-*/}
-  const tagsMap = {/*
-      [tagName]: id
-  */}
-  const displayNameMap = {/*
-    [displayName]: id
-  */}
+  const productsMap = {/* [fullName] : id*/};
+  const tagsMap = {/*[tagName]: id*/};
+  const displayNameMap = {/*[displayName]: id*/};
 
   for (const dname of displayNames) {
     const dn = await DisplayName.create(dname);
@@ -37,24 +31,35 @@ const displayNames = require('./JSON/displayNames.json');
   };
 
   for (const product of products) {
+    const displayName = product.displayName
     product.displayName = displayNameMap[product.displayName];
     const pr = await Product.create(product);
-    productsMap[product.fullName] = pr.id;
+    productsMap[product.fullName] = {
+      id: pr.id,
+      displayNameId: displayNameMap[displayName]
+    };
   };
 
   for (const recipe of recipes) {
     recipe.tags = recipe.tags.map(item => tagsMap[item]);
 
     recipe.ingredients = recipe.ingredients.map(item => ({
-        product: productsMap[item.product],
+        product: productsMap[item.product].id,
+        displayName: productsMap[item.product].displayNameId,
         amount: item.amount,
         displayAmount: item.displayAmount
     }));
 
-    recipe.optionalIngredients = recipe.optionalIngredients.map(item => ({
-        product: productsMap[item.product],
-        displayAmount: item.displayAmount
-    }));
+    recipe.optionalIngredients = recipe.optionalIngredients.map(item => {
+      if (item.product) {
+      return ({
+        product: item ? productsMap[item.product].id : undefined,
+        displayName: item ? productsMap[item.product].displayNameId : undefined,
+        amount: item.amount || undefined,
+        displayAmount: item.displayAmount || undefined
+      })}
+    }
+    );
     
     await Recipe.create(recipe);
   }

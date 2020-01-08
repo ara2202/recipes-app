@@ -21,13 +21,16 @@ const recipeSchema = new mongoose.Schema({
       required: true,
     },
     ingredients: [{
-      product: {type: ObjectId, ref: 'Product', required: true},
-      amount: {type: Number, required: true},
-      displayAmount: String
+        product: {type: ObjectId, ref: 'Product', required: true},
+        displayName: {type: ObjectId, ref: 'DisplayName', required: true},
+        amount: {type: Number, required: true},
+        displayAmount: String
     }],
     optionalIngredients: [{
-      product: {type: ObjectId, ref: 'Product'},
-      displayAmount: String
+        product: {type: ObjectId, ref: 'Product'},
+        displayName: {type: ObjectId, ref: 'DisplayName'},
+        amount:  Number,
+        displayAmount: String
     }],
     tags: [{type: ObjectId, ref: 'Tag', required: true}],
     complexity: {
