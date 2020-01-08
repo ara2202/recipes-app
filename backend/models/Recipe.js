@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Product = require('./Product');
-const Tag = require('./Tag');
 const ObjectId = mongoose.Schema.Types.ObjectId;
 const connection = require('../libs/mongooseConnection');
 
@@ -54,7 +53,7 @@ const recipeSchema = new mongoose.Schema({
       type: [reviewSchema],
       required: false
     },
-    // Добавить дату добавления в базу рецепта
+    //Todo: Добавить дату добавления в базу рецепта
     // Чтобы новые рецепты попадали в фильтр "новинки" и/или отображались с пометкой
 });
 

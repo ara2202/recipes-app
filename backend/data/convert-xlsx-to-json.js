@@ -6,6 +6,13 @@ const JSON_dir = 'JSON';
 //const files = fs.readdirSync(path.join(__dirname, 'xlsx-files'));
 //console.log(files);
 
+console.log(`processing displayNames ...`);
+const workbookDN = XLSX.readFile(path.join(__dirname, XLSX_dir, 'displayNames.xlsx'));
+const sheet_nameDN = workbookDN.SheetNames[0];
+const worksheetDN = workbookDN.Sheets[sheet_nameDN];
+const displayNames = XLSX.utils.sheet_to_json(worksheetDN);
+fs.writeFileSync(path.join(__dirname, JSON_dir, 'displayNames.json'), JSON.stringify(displayNames));
+
 console.log(`processing products ...`);
 const workbookProducts = XLSX.readFile(path.join(__dirname, XLSX_dir, 'products.xlsx'));
 const sheet_namePr = workbookProducts.SheetNames[0];

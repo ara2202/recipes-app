@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const DisplayName = require('./DisplayName');
+const ObjectId = mongoose.Schema.Types.ObjectId;
 const connection = require('../libs/mongooseConnection');
 
 const productSchema = new mongoose.Schema({
@@ -7,8 +9,9 @@ const productSchema = new mongoose.Schema({
       required: true,
     },
     displayName: {
-        type: String,
-        required: true
+        type: ObjectId,
+        ref: 'DisplayName',
+        required: true,
     },
     category: {
         type: String,

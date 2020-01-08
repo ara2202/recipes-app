@@ -1,182 +1,182 @@
 [
-    {
-        "tagName": "пюре",
-        "tagCategory": "консистенция"
-    },
-    {
-        "tagName": "варка",
-        "tagCategory": "способ приготовления"
-    },
-    {
-        "tagName": "пароварка",
-        "tagCategory": "способ приготовления"
-    },
-    {
-        "tagName": "без БКМ",
-        "tagCategory": "аллергикам"
-    },
-    {
-        "tagName": "без глютена",
-        "tagCategory": "аллергикам"
-    },
-    {
-        "tagName": "вегетарианское",
-        "tagCategory": "тип питания"
-    },
-    {
-        "tagName": "веганское",
-        "tagCategory": "тип питания"
-    },
-    {
-        "tagName": "овощи",
-        "tagCategory": "основной ингредиент"
-    },
-    {
-        "tagName": "палео",
-        "tagCategory": "тип питания"
-    },
-    {
-        "tagName": "лето",
-        "tagCategory": "время года"
-    },
-    {
-        "tagName": "зима",
-        "tagCategory": "время года"
-    },
-    {
-        "tagName": "блендер",
-        "tagCategory": "способ приготовления"
-    },
-    {
-        "tagName": "можно заморозить",
-        "tagCategory": "другое"
-    },
-    {
-        "tagName": "быстро",
-        "tagCategory": "другое"
-    },
-    {
-        "tagName": "фрукты",
-        "tagCategory": "основной ингредиент"
-    },
-    {
-        "tagName": "десерты",
-        "tagCategory": "тип блюда"
-    },
-    {
-        "tagName": "без сахара",
-        "tagCategory": "аллергикам"
-    },
-    {
-        "tagName": "гарнир",
-        "tagCategory": "тип блюда"
-    },
-    {
-        "tagName": "духовка",
-        "tagCategory": "способ приготовления"
-    },
-    {
-        "tagName": "завтрак",
-        "tagCategory": "прием пищи"
-    },
-    {
-        "tagName": "обед",
-        "tagCategory": "прием пищи"
-    },
-    {
-        "tagName": "ужин",
-        "tagCategory": "прием пищи"
-    },
-    {
-        "tagName": "перекус",
-        "tagCategory": "прием пищи"
-    },
-    {
-        "tagName": "крупы",
-        "tagCategory": "основной ингредиент"
-    },
-    {
-        "tagName": "кусочки",
-        "tagCategory": "консистенция"
-    },
-    {
-        "tagName": "напитки",
-        "tagCategory": "тип блюда"
-    },
-    {
-        "tagName": "салаты",
-        "tagCategory": "тип блюда"
-    },
-    {
-        "tagName": "супы",
-        "tagCategory": "тип блюда"
-    },
-    {
-        "tagName": "второе",
-        "tagCategory": "тип блюда"
-    },
-    {
-        "tagName": "выпечка",
-        "tagCategory": "тип блюда"
-    },
-    {
-        "tagName": "мультиварка",
-        "tagCategory": "способ приготовления"
-    },
-    {
-        "tagName": "микроволновка",
-        "tagCategory": "способ приготовления"
-    },
-    {
-        "tagName": "BLW",
-        "tagCategory": "консистенция"
-    },
-    {
-        "tagName": "общий стол",
-        "tagCategory": "тип питания"
-    },
-    {
-        "tagName": "праздник",
-        "tagCategory": "другое"
-    },
-    {
-        "tagName": "сыроедам",
-        "tagCategory": "тип питания"
-    },
-    {
-        "tagName": "бобовые",
-        "tagCategory": "основной ингредиент"
-    },
-    {
-        "tagName": "мясо",
-        "tagCategory": "основной ингредиент"
-    },
-    {
-        "tagName": "молочка",
-        "tagCategory": "основной ингредиент"
-    },
-    {
-        "tagName": "яйца",
-        "tagCategory": "основной ингредиент"
-    },
-    {
-        "tagName": "рыба",
-        "tagCategory": "основной ингредиент"
-    },
-    {
-        "tagName": "морепродукты",
-        "tagCategory": "основной ингредиент"
-    },
-    {
-        "tagName": "субпродукты",
-        "tagCategory": "основной ингредиент"
-    },
-    {
-        "tagName": "смузи",
-        "tagCategory": "тип блюда"
-    },
-    {
-        "tagName": "творог",
-        "tagCategory": "основной ингредиент"
-    }
+  {
+    "tagName": "пюре",
+    "tagCategory": "консистенция"
+  },
+  {
+    "tagName": "варка",
+    "tagCategory": "способ приготовления"
+  },
+  {
+    "tagName": "пароварка",
+    "tagCategory": "способ приготовления"
+  },
+  {
+    "tagName": "без БКМ",
+    "tagCategory": "аллергикам"
+  },
+  {
+    "tagName": "без глютена",
+    "tagCategory": "аллергикам"
+  },
+  {
+    "tagName": "вегетарианское",
+    "tagCategory": "тип питания"
+  },
+  {
+    "tagName": "веганское",
+    "tagCategory": "тип питания"
+  },
+  {
+    "tagName": "овощи",
+    "tagCategory": "основной ингредиент"
+  },
+  {
+    "tagName": "палео",
+    "tagCategory": "тип питания"
+  },
+  {
+    "tagName": "лето",
+    "tagCategory": "время года"
+  },
+  {
+    "tagName": "зима",
+    "tagCategory": "время года"
+  },
+  {
+    "tagName": "блендер",
+    "tagCategory": "способ приготовления"
+  },
+  {
+    "tagName": "можно заморозить",
+    "tagCategory": "другое"
+  },
+  {
+    "tagName": "быстро",
+    "tagCategory": "другое"
+  },
+  {
+    "tagName": "фрукты",
+    "tagCategory": "основной ингредиент"
+  },
+  {
+    "tagName": "десерты",
+    "tagCategory": "тип блюда"
+  },
+  {
+    "tagName": "без сахара",
+    "tagCategory": "аллергикам"
+  },
+  {
+    "tagName": "гарнир",
+    "tagCategory": "тип блюда"
+  },
+  {
+    "tagName": "духовка",
+    "tagCategory": "способ приготовления"
+  },
+  {
+    "tagName": "завтрак",
+    "tagCategory": "прием пищи"
+  },
+  {
+    "tagName": "обед",
+    "tagCategory": "прием пищи"
+  },
+  {
+    "tagName": "ужин",
+    "tagCategory": "прием пищи"
+  },
+  {
+    "tagName": "перекус",
+    "tagCategory": "прием пищи"
+  },
+  {
+    "tagName": "крупы",
+    "tagCategory": "основной ингредиент"
+  },
+  {
+    "tagName": "кусочки",
+    "tagCategory": "консистенция"
+  },
+  {
+    "tagName": "напитки",
+    "tagCategory": "тип блюда"
+  },
+  {
+    "tagName": "салаты",
+    "tagCategory": "тип блюда"
+  },
+  {
+    "tagName": "супы",
+    "tagCategory": "тип блюда"
+  },
+  {
+    "tagName": "второе",
+    "tagCategory": "тип блюда"
+  },
+  {
+    "tagName": "выпечка",
+    "tagCategory": "тип блюда"
+  },
+  {
+    "tagName": "мультиварка",
+    "tagCategory": "способ приготовления"
+  },
+  {
+    "tagName": "микроволновка",
+    "tagCategory": "способ приготовления"
+  },
+  {
+    "tagName": "BLW",
+    "tagCategory": "консистенция"
+  },
+  {
+    "tagName": "общий стол",
+    "tagCategory": "тип питания"
+  },
+  {
+    "tagName": "праздник",
+    "tagCategory": "другое"
+  },
+  {
+    "tagName": "сыроедам",
+    "tagCategory": "тип питания"
+  },
+  {
+    "tagName": "бобовые",
+    "tagCategory": "основной ингредиент"
+  },
+  {
+    "tagName": "мясо",
+    "tagCategory": "основной ингредиент"
+  },
+  {
+    "tagName": "молочка",
+    "tagCategory": "основной ингредиент"
+  },
+  {
+    "tagName": "яйца",
+    "tagCategory": "основной ингредиент"
+  },
+  {
+    "tagName": "рыба",
+    "tagCategory": "основной ингредиент"
+  },
+  {
+    "tagName": "морепродукты",
+    "tagCategory": "основной ингредиент"
+  },
+  {
+    "tagName": "субпродукты",
+    "tagCategory": "основной ингредиент"
+  },
+  {
+    "tagName": "смузи",
+    "tagCategory": "тип блюда"
+  },
+  {
+    "tagName": "творог",
+    "tagCategory": "основной ингредиент"
+  }
 ]
