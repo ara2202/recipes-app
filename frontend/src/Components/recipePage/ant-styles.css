@@ -1,0 +1,33 @@
+.ant-carousel .slick-next {
+    right: -10px;
+}
+
+.ant-carousel .slick-prev {
+    left: 0;
+}
+
+.ant-carousel .slick-next::before {
+    content: '>';
+}
+
+.ant-carousel .slick-prev::before {
+    content: '<';
+}
+
+.ant-carousel .slick-next, .ant-carousel .slick-prev {
+    font-size: 14px;
+    color: black;
+    z-index: 1;
+}
+
+.ant-carousel .slick-prev:hover, .ant-carousel .slick-next:hover {
+    color: cornflowerblue;
+}
+
+.ant-carousel .slick-dots li button {
+    background: aqua;
+}
+
+.ant-rate-star-first, .ant-rate-star-second {
+    color: #CBCBCB;
+}

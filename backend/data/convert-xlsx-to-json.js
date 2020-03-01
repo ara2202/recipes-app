@@ -3,15 +3,13 @@ const fs = require('fs');
 const path = require('path');
 const XLSX_dir = 'XLSX';
 const JSON_dir = 'JSON';
-//const files = fs.readdirSync(path.join(__dirname, 'xlsx-files'));
-//console.log(files);
 
 console.log(`processing displayNames ...`);
-const workbookDN = XLSX.readFile(path.join(__dirname, XLSX_dir, 'displayNames.xlsx'));
+const workbookDN = XLSX.readFile(path.join(__dirname, XLSX_dir, 'productDisplayNames.xlsx'));
 const sheet_nameDN = workbookDN.SheetNames[0];
 const worksheetDN = workbookDN.Sheets[sheet_nameDN];
 const displayNames = XLSX.utils.sheet_to_json(worksheetDN);
-fs.writeFileSync(path.join(__dirname, JSON_dir, 'displayNames.json'), JSON.stringify(displayNames));
+fs.writeFileSync(path.join(__dirname, JSON_dir, 'productDisplayNames.json'), JSON.stringify(displayNames));
 
 console.log(`processing products ...`);
 const workbookProducts = XLSX.readFile(path.join(__dirname, XLSX_dir, 'products.xlsx'));
@@ -36,7 +34,7 @@ for (const name of workbookRecipes.SheetNames) {
   const rawRecipes = XLSX.utils.sheet_to_json(sheet);
   
   for (const recipe of rawRecipes) {
-    const {recipeName, product, amount, displayAmount, optProduct,
+    const {recipeName, product, showName, amount, displayAmount, optProduct, showOptName,
             amountOpt, displayAmountOpt, tags, images} = recipe;
     if (recipeName) {
       if (newRecipe) recipes.push(newRecipe);
@@ -44,9 +42,10 @@ for (const name of workbookRecipes.SheetNames) {
       newRecipe = Object.assign({}, recipe);
       newRecipe.tags = [tags];
       newRecipe.images = [images];
-      newRecipe.ingredients = [{product, amount, displayAmount}];
+      newRecipe.ingredients = [{product, showName, amount, displayAmount}];
       newRecipe.optionalIngredients = [{
         product: optProduct,
+        showName: showOptName,
         amount: amountOpt,
         displayAmount: displayAmountOpt
       }];
@@ -61,15 +60,17 @@ for (const name of workbookRecipes.SheetNames) {
     {
       if (tags) newRecipe.tags.push(tags);
       if (images) newRecipe.images.push(images);
-      if (product) newRecipe.ingredients.push({product, amount, displayAmount});
+      if (product) newRecipe.ingredients.push({product, showName, amount, displayAmount});
       if (optProduct) newRecipe.optionalIngredients.push({
         product: optProduct,
+        showName: showOptName,
         amount: amountOpt,
         displayAmount: displayAmountOpt
       });
     }
   } 
-};
+}
+// process the last one of recipes
 if (newRecipe) recipes.push(newRecipe);
 
 fs.writeFileSync(path.join(__dirname, JSON_dir, 'recipes.json'), JSON.stringify(recipes));

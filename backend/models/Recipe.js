@@ -21,14 +21,16 @@ const recipeSchema = new mongoose.Schema({
       required: true,
     },
     ingredients: [{
-        product: {type: ObjectId, ref: 'Product', required: true},
-        displayName: {type: ObjectId, ref: 'DisplayName', required: true},
+        product: {type: ObjectId, ref: 'Product', required: true},          //E.g. "fried potatoes"
+        displayName: {type: ObjectId, ref: 'DisplayName', required: true},  //E.g. "potato"
+        showName: String,                                 //used occasionally instead of displayName
         amount: {type: Number, required: true},
         displayAmount: String
     }],
     optionalIngredients: [{
         product: {type: ObjectId, ref: 'Product'},
         displayName: {type: ObjectId, ref: 'DisplayName'},
+        showName: String,
         amount:  Number,
         displayAmount: String
     }],
@@ -38,6 +40,7 @@ const recipeSchema = new mongoose.Schema({
       required: true
     },
     time: String,
+    totalTime: Number,
     recipeText: {
         type: String,
         required: true
@@ -83,7 +86,7 @@ recipeSchema.pre('save', async function(next){
 recipeSchema.index(
   { title: 'text', description: 'text' },
   {
-    weights: { recipeName: 10, recipeText: 5 },
+    weights: { recipeName: 10, recipeText: 3}, //ToDo как сюда добавить теги
     default_language: 'russian',
     name: 'TextSearchIndex'
   }
