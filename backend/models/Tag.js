@@ -5,12 +5,13 @@ const tagsSchema = new mongoose.Schema({
     tagName: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
     },
     tagCategory: {
         type: String,
-        required: true
-    }
+        required: true,
+    },
+    tagColor: String,
 });
 
 module.exports = connection.model('Tag', tagsSchema);

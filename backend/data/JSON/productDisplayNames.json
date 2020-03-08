@@ -1,1 +1,146 @@
-[{"displayName":"Базилик"},{"displayName":"Батат"},{"displayName":"Булгур"},{"displayName":"Ванильный экстракт"},{"displayName":"Вода"},{"displayName":"Гвоздика"},{"displayName":"Геркулес"},{"displayName":"Голубика"},{"displayName":"Готовая смесь"},{"displayName":"Гречка"},{"displayName":"Грудное молоко"},{"displayName":"Груша"},{"displayName":"Зеленый горошек"},{"displayName":"Имбирь (корень)"},{"displayName":"Имбирь (порошок)"},{"displayName":"Кардамон"},{"displayName":"Карри"},{"displayName":"Киноа"},{"displayName":"Клубника"},{"displayName":"Кокосовое масло"},{"displayName":"Кориандр"},{"displayName":"Корица"},{"displayName":"Кукурузная крупа"},{"displayName":"Малина"},{"displayName":"Морковь"},{"displayName":"Мускатный орех"},{"displayName":"Мята"},{"displayName":"Овощной бульон"},{"displayName":"Паста"},{"displayName":"Персик"},{"displayName":"Петрушка"},{"displayName":"Полба"},{"displayName":"Пшеничная крупа"},{"displayName":"Пшено"},{"displayName":"Ржаная крупа"},{"displayName":"Рис бурый"},{"displayName":"Розмарин"},{"displayName":"Сок лайма"},{"displayName":"Сок лимона"},{"displayName":"Тимьян"},{"displayName":"Тмин"},{"displayName":"Хлеб пшеничный"},{"displayName":"Хлеб ржаной"},{"displayName":"Цуккини"},{"displayName":"Черника"},{"displayName":"Чеснок"},{"displayName":"Яблоко"},{"displayName":"Ячмень"}]
+[
+  {
+    "displayName": "Базилик"
+  },
+  {
+    "displayName": "Батат"
+  },
+  {
+    "displayName": "Булгур"
+  },
+  {
+    "displayName": "Ванильный экстракт"
+  },
+  {
+    "displayName": "Вода"
+  },
+  {
+    "displayName": "Гвоздика"
+  },
+  {
+    "displayName": "Геркулес"
+  },
+  {
+    "displayName": "Голубика"
+  },
+  {
+    "displayName": "Готовая смесь"
+  },
+  {
+    "displayName": "Гречка"
+  },
+  {
+    "displayName": "Грудное молоко"
+  },
+  {
+    "displayName": "Груша"
+  },
+  {
+    "displayName": "Зеленый горошек"
+  },
+  {
+    "displayName": "Имбирь (корень)"
+  },
+  {
+    "displayName": "Имбирь (порошок)"
+  },
+  {
+    "displayName": "Кардамон"
+  },
+  {
+    "displayName": "Карри"
+  },
+  {
+    "displayName": "Киноа"
+  },
+  {
+    "displayName": "Клубника"
+  },
+  {
+    "displayName": "Кокосовое масло"
+  },
+  {
+    "displayName": "Кориандр"
+  },
+  {
+    "displayName": "Корица"
+  },
+  {
+    "displayName": "Кукурузная крупа"
+  },
+  {
+    "displayName": "Малина"
+  },
+  {
+    "displayName": "Морковь"
+  },
+  {
+    "displayName": "Мускатный орех"
+  },
+  {
+    "displayName": "Мята"
+  },
+  {
+    "displayName": "Овощной бульон"
+  },
+  {
+    "displayName": "Паста"
+  },
+  {
+    "displayName": "Персик"
+  },
+  {
+    "displayName": "Петрушка"
+  },
+  {
+    "displayName": "Полба"
+  },
+  {
+    "displayName": "Пшеничная крупа"
+  },
+  {
+    "displayName": "Пшено"
+  },
+  {
+    "displayName": "Ржаная крупа"
+  },
+  {
+    "displayName": "Рис бурый"
+  },
+  {
+    "displayName": "Розмарин"
+  },
+  {
+    "displayName": "Сок лайма"
+  },
+  {
+    "displayName": "Сок лимона"
+  },
+  {
+    "displayName": "Тимьян"
+  },
+  {
+    "displayName": "Тмин"
+  },
+  {
+    "displayName": "Хлеб пшеничный"
+  },
+  {
+    "displayName": "Хлеб ржаной"
+  },
+  {
+    "displayName": "Цуккини"
+  },
+  {
+    "displayName": "Черника"
+  },
+  {
+    "displayName": "Чеснок"
+  },
+  {
+    "displayName": "Яблоко"
+  },
+  {
+    "displayName": "Ячмень"
+  }
+]

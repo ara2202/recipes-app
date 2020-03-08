@@ -9,13 +9,13 @@ const tokenSchema = new mongoose.Schema({
   },
   refreshToken: {
     type: String,
-    required: true
+    required: true,
   },
   sub: String,
   ts: {
     type: Date,
     default: new Date(),
-  }
+  },
 });
 
 schema.index({accessToken: 1, refreshToken: 1});

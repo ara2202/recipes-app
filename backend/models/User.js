@@ -15,7 +15,7 @@ function removeProperties(...properties) {
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
-    required: 'Необходимо ввести имя пользователя'
+    required: 'Необходимо ввести имя пользователя',
   },
   email: {
     type: String,
@@ -40,7 +40,7 @@ const userSchema = new mongoose.Schema({
   },
   salt: {
     type: String,
-    select: false
+    select: false,
   },
 }, 
 {
@@ -50,7 +50,7 @@ const userSchema = new mongoose.Schema({
   },
   toJSON: {
     transform: removeProperties('password', 'salt'),
-  }
+  },
 });
 
 function generatePassword(salt, password) {

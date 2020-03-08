@@ -1,1 +1,237 @@
-[{"tagName":"без БКМ","tagCategory":"аллергикам","tagColor":"#f8bdc4"},{"tagName":"без глютена","tagCategory":"аллергикам","tagColor":"#f8bdc4"},{"tagName":"без сахара","tagCategory":"аллергикам","tagColor":"#f8bdc4"},{"tagName":"лето","tagCategory":"время года","tagColor":"#e01a4f"},{"tagName":"зима","tagCategory":"время года","tagColor":"#e01a4f"},{"tagName":"можно заморозить","tagCategory":"другое","tagColor":"#f6511d"},{"tagName":"быстро","tagCategory":"другое","tagColor":"#f6511d"},{"tagName":"праздник","tagCategory":"другое","tagColor":"#f6511d"},{"tagName":"пюре","tagCategory":"консистенция","tagColor":"#ffb400"},{"tagName":"кусочки","tagCategory":"консистенция","tagColor":"#ffb400"},{"tagName":"BLW","tagCategory":"консистенция","tagColor":"#ffb400"},{"tagName":"овощи","tagCategory":"основной ингредиент","tagColor":"#daff7d"},{"tagName":"фрукты","tagCategory":"основной ингредиент","tagColor":"#daff7d"},{"tagName":"крупы","tagCategory":"основной ингредиент","tagColor":"#daff7d"},{"tagName":"бобовые","tagCategory":"основной ингредиент","tagColor":"#daff7d"},{"tagName":"мясо","tagCategory":"основной ингредиент","tagColor":"#daff7d"},{"tagName":"молочка","tagCategory":"основной ингредиент","tagColor":"#daff7d"},{"tagName":"яйца","tagCategory":"основной ингредиент","tagColor":"#daff7d"},{"tagName":"рыба","tagCategory":"основной ингредиент","tagColor":"#daff7d"},{"tagName":"морепродукты","tagCategory":"основной ингредиент","tagColor":"#daff7d"},{"tagName":"субпродукты","tagCategory":"основной ингредиент","tagColor":"#daff7d"},{"tagName":"творог","tagCategory":"основной ингредиент","tagColor":"#daff7d"},{"tagName":"завтрак","tagCategory":"прием пищи","tagColor":"#419d78"},{"tagName":"обед","tagCategory":"прием пищи","tagColor":"#419d78"},{"tagName":"ужин","tagCategory":"прием пищи","tagColor":"#419d78"},{"tagName":"перекус","tagCategory":"прием пищи","tagColor":"#419d78"},{"tagName":"варка","tagCategory":"способ приготовления","tagColor":"#15e6cd"},{"tagName":"пароварка","tagCategory":"способ приготовления","tagColor":"#15e6cd"},{"tagName":"блендер","tagCategory":"способ приготовления","tagColor":"#15e6cd"},{"tagName":"духовка","tagCategory":"способ приготовления","tagColor":"#15e6cd"},{"tagName":"тушение","tagCategory":"способ приготовления","tagColor":"#15e6cd"},{"tagName":"мультиварка","tagCategory":"способ приготовления","tagColor":"#15e6cd"},{"tagName":"микроволновка","tagCategory":"способ приготовления","tagColor":"#15e6cd"},{"tagName":"десерты","tagCategory":"тип блюда","tagColor":"#5fbff9"},{"tagName":"гарнир","tagCategory":"тип блюда","tagColor":"#5fbff9"},{"tagName":"напитки","tagCategory":"тип блюда","tagColor":"#5fbff9"},{"tagName":"салаты","tagCategory":"тип блюда","tagColor":"#5fbff9"},{"tagName":"супы","tagCategory":"тип блюда","tagColor":"#5fbff9"},{"tagName":"второе","tagCategory":"тип блюда","tagColor":"#5fbff9"},{"tagName":"выпечка","tagCategory":"тип блюда","tagColor":"#5fbff9"},{"tagName":"каши","tagCategory":"тип блюда","tagColor":"#5fbff9"},{"tagName":"смузи","tagCategory":"тип блюда","tagColor":"#5fbff9"},{"tagName":"вегетарианское","tagCategory":"тип питания","tagColor":"#016fb9"},{"tagName":"веганское","tagCategory":"тип питания","tagColor":"#016fb9"},{"tagName":"палео","tagCategory":"тип питания","tagColor":"#016fb9"},{"tagName":"общий стол","tagCategory":"тип питания","tagColor":"#016fb9"},{"tagName":"сыроедам","tagCategory":"тип питания","tagColor":"#016fb9"}]
+[
+  {
+    "tagName": "без БКМ",
+    "tagCategory": "аллергикам",
+    "tagColor": "#f8bdc4"
+  },
+  {
+    "tagName": "без глютена",
+    "tagCategory": "аллергикам",
+    "tagColor": "#f8bdc4"
+  },
+  {
+    "tagName": "без сахара",
+    "tagCategory": "аллергикам",
+    "tagColor": "#f8bdc4"
+  },
+  {
+    "tagName": "лето",
+    "tagCategory": "время года",
+    "tagColor": "#e01a4f"
+  },
+  {
+    "tagName": "зима",
+    "tagCategory": "время года",
+    "tagColor": "#e01a4f"
+  },
+  {
+    "tagName": "можно заморозить",
+    "tagCategory": "другое",
+    "tagColor": "#f6511d"
+  },
+  {
+    "tagName": "быстро",
+    "tagCategory": "другое",
+    "tagColor": "#f6511d"
+  },
+  {
+    "tagName": "праздник",
+    "tagCategory": "другое",
+    "tagColor": "#f6511d"
+  },
+  {
+    "tagName": "пюре",
+    "tagCategory": "консистенция",
+    "tagColor": "#ffb400"
+  },
+  {
+    "tagName": "кусочки",
+    "tagCategory": "консистенция",
+    "tagColor": "#ffb400"
+  },
+  {
+    "tagName": "BLW",
+    "tagCategory": "консистенция",
+    "tagColor": "#ffb400"
+  },
+  {
+    "tagName": "овощи",
+    "tagCategory": "основной ингредиент",
+    "tagColor": "#daff7d"
+  },
+  {
+    "tagName": "фрукты",
+    "tagCategory": "основной ингредиент",
+    "tagColor": "#daff7d"
+  },
+  {
+    "tagName": "крупы",
+    "tagCategory": "основной ингредиент",
+    "tagColor": "#daff7d"
+  },
+  {
+    "tagName": "бобовые",
+    "tagCategory": "основной ингредиент",
+    "tagColor": "#daff7d"
+  },
+  {
+    "tagName": "мясо",
+    "tagCategory": "основной ингредиент",
+    "tagColor": "#daff7d"
+  },
+  {
+    "tagName": "молочка",
+    "tagCategory": "основной ингредиент",
+    "tagColor": "#daff7d"
+  },
+  {
+    "tagName": "яйца",
+    "tagCategory": "основной ингредиент",
+    "tagColor": "#daff7d"
+  },
+  {
+    "tagName": "рыба",
+    "tagCategory": "основной ингредиент",
+    "tagColor": "#daff7d"
+  },
+  {
+    "tagName": "морепродукты",
+    "tagCategory": "основной ингредиент",
+    "tagColor": "#daff7d"
+  },
+  {
+    "tagName": "субпродукты",
+    "tagCategory": "основной ингредиент",
+    "tagColor": "#daff7d"
+  },
+  {
+    "tagName": "творог",
+    "tagCategory": "основной ингредиент",
+    "tagColor": "#daff7d"
+  },
+  {
+    "tagName": "завтрак",
+    "tagCategory": "прием пищи",
+    "tagColor": "#419d78"
+  },
+  {
+    "tagName": "обед",
+    "tagCategory": "прием пищи",
+    "tagColor": "#419d78"
+  },
+  {
+    "tagName": "ужин",
+    "tagCategory": "прием пищи",
+    "tagColor": "#419d78"
+  },
+  {
+    "tagName": "перекус",
+    "tagCategory": "прием пищи",
+    "tagColor": "#419d78"
+  },
+  {
+    "tagName": "варка",
+    "tagCategory": "способ приготовления",
+    "tagColor": "#15e6cd"
+  },
+  {
+    "tagName": "пароварка",
+    "tagCategory": "способ приготовления",
+    "tagColor": "#15e6cd"
+  },
+  {
+    "tagName": "блендер",
+    "tagCategory": "способ приготовления",
+    "tagColor": "#15e6cd"
+  },
+  {
+    "tagName": "духовка",
+    "tagCategory": "способ приготовления",
+    "tagColor": "#15e6cd"
+  },
+  {
+    "tagName": "тушение",
+    "tagCategory": "способ приготовления",
+    "tagColor": "#15e6cd"
+  },
+  {
+    "tagName": "мультиварка",
+    "tagCategory": "способ приготовления",
+    "tagColor": "#15e6cd"
+  },
+  {
+    "tagName": "микроволновка",
+    "tagCategory": "способ приготовления",
+    "tagColor": "#15e6cd"
+  },
+  {
+    "tagName": "десерты",
+    "tagCategory": "тип блюда",
+    "tagColor": "#5fbff9"
+  },
+  {
+    "tagName": "гарнир",
+    "tagCategory": "тип блюда",
+    "tagColor": "#5fbff9"
+  },
+  {
+    "tagName": "напитки",
+    "tagCategory": "тип блюда",
+    "tagColor": "#5fbff9"
+  },
+  {
+    "tagName": "салаты",
+    "tagCategory": "тип блюда",
+    "tagColor": "#5fbff9"
+  },
+  {
+    "tagName": "супы",
+    "tagCategory": "тип блюда",
+    "tagColor": "#5fbff9"
+  },
+  {
+    "tagName": "второе",
+    "tagCategory": "тип блюда",
+    "tagColor": "#5fbff9"
+  },
+  {
+    "tagName": "выпечка",
+    "tagCategory": "тип блюда",
+    "tagColor": "#5fbff9"
+  },
+  {
+    "tagName": "каши",
+    "tagCategory": "тип блюда",
+    "tagColor": "#5fbff9"
+  },
+  {
+    "tagName": "смузи",
+    "tagCategory": "тип блюда",
+    "tagColor": "#5fbff9"
+  },
+  {
+    "tagName": "вегетарианское",
+    "tagCategory": "тип питания",
+    "tagColor": "#016fb9"
+  },
+  {
+    "tagName": "веганское",
+    "tagCategory": "тип питания",
+    "tagColor": "#016fb9"
+  },
+  {
+    "tagName": "палео",
+    "tagCategory": "тип питания",
+    "tagColor": "#016fb9"
+  },
+  {
+    "tagName": "общий стол",
+    "tagCategory": "тип питания",
+    "tagColor": "#016fb9"
+  },
+  {
+    "tagName": "сыроедам",
+    "tagCategory": "тип питания",
+    "tagColor": "#016fb9"
+  }
+]
