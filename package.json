@@ -28,11 +28,11 @@
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "@types/styled-components": "^5.0.1",
-    "concurrently": "^5.0.0",
+    "concurrently": "^5.1.0",
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "config": "^3.2.3",
-    "mongoose": "^5.7.5"
+    "config": "^3.3.0",
+    "mongoose": "^5.9.3"
   }
 }
