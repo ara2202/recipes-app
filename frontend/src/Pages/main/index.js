@@ -67,7 +67,7 @@ function MainRecipesPage(props) {
 
     return (
         <>
-            <div style={{fontStyle: 'italic', width: '100%', maxWidth: '700px'}}>Всего рецептов найдено: {totalCount}</div>
+            <div style={{color: 'white', fontStyle: 'italic', width: '100%', maxWidth: '700px'}}>Всего рецептов найдено: {totalCount}</div>
             <FiltersDropDown
                 onQueryChange={onQueryChange}
                 options1={productDisplayNames}

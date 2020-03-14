@@ -41,18 +41,22 @@ function Ingredients({ingredients, displayNames, maxRows}) {
     return (
     <>
         {ingredients.map((i, index, arr) => {
-            const displayName = displayNames && displayNames.find(dn => dn._id === i.displayName);
+            const displayName = displayNames?.find(dn => dn._id === i?.displayName);
             if ((index < maxRows && arr.length <= maxRows)
                 || (index < maxRows - 1 && arr.length > maxRows)
                 || maxRows === undefined) {
             return (
-                <RecipeIngredientRaw key={i._id}>
-                    <Product>{i.showName || (displayName && displayName.displayName)}</Product>
-                    <Amount>{i.displayAmount || `${i.amount} г`}</Amount>
+                <RecipeIngredientRaw key={i?._id}>
+                    <Product>{i?.showName || displayName?.displayName}</Product>
+                    <Amount>{
+                        i?.displayAmount ?
+                        `${i?.displayAmount} (${i?.amount}г)` :
+                        `${i?.amount} г`}
+                    </Amount>
                 </RecipeIngredientRaw>
             )
             } else if (index === maxRows) {
-                return (<div key={i._id} style={{fontStyle: 'italic'}}>и ещё...</div>)
+                return (<div key={i?._id} style={{fontStyle: 'italic'}}>и ещё...</div>)
             } else return null;
         })}
     </>);

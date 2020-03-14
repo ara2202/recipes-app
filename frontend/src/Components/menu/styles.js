@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {ReactComponent as SvgLogo} from 'Assets/svg/Logo_mamas_sapiens_UPD.svg';
-import {Link} from 'react-router-dom';
 import {COLORS} from 'Components/commonStyles';
+import {Link} from 'react-router-dom';
 
 export const HeaderContainer = styled.header`
   height: 80px;
@@ -32,12 +32,9 @@ export const MenuContainer = styled.nav`
   
 `;
 
-export const MenuLink = styled(Link)`
-  color: white;
+export const StyledLink = styled(Link)`
   text-decoration: none;
-  &:hover {
-    color: ${COLORS.SELECT_COLOR};
-  }
+  color: ${props => props.isActive ? COLORS.SELECT_COLOR : 'white'};
 `;
 
 export const LoginButton = styled.button`

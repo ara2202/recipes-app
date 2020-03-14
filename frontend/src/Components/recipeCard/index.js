@@ -1,36 +1,12 @@
 import React from 'react';
-import chroma from 'chroma-js';
 import {useDispatch } from 'react-redux'
 import {Rate} from 'antd';
 import {push} from 'connected-react-router';
 import {Link} from 'react-router-dom';
 
-import Ingredients from '../Ingredients';
-import {MainContainer, Votes, Header, AgeDiv, FavoritesDiv, SvgFavorites, SvgPortions, SvgTime,
-    SvgComplexity, RecipeContainer, ActionsContainer, RateDiv, RecipeInfo, RecipeInfoRaw,
-    RecipeIngredients, ShowOver680px, StatsContainer, SvgStats} from './styles';
-
-export const getAgeColor = age => {
-   switch (true) {
-       case age <  5: return '#f8bdc4';
-       case age <  6: return '#e01a4f';
-       case age <  7: return '#f6511d';
-       case age <  8: return '#ffb400';
-       case age <  9: return '#daff7d';
-       case age < 10: return '#419d78';
-       case age < 11: return '#15e6cd';
-       case age < 12: return '#5fbff9';
-       case age < 13: return '#016fb9';
-       case age < 19: return '#631d76';
-       case age < 25: return '#b288c0';
-       case age < 37: return '#7c606b';
-       default: return '#ccc';
-   }
-};
-
-export const getTextColor = color => {
-    return chroma(color).luminance() > 0.7? '#2e315c' : '#fff';
-};
+import {getAgeColor, getTextColor} from 'Components/commonStyles';
+import Ingredients from 'Components/Ingredients';
+import {s} from './styles';
 
 export default function RecipeCard(props) {
     const {recipeName, totalTime, complexity, allowedAge, images, ingredients, _id} = props.recipe;
@@ -40,46 +16,46 @@ export default function RecipeCard(props) {
 
     return (
     <Link style={{ textDecoration: 'none', color: 'black' }} to={`/recipe/${_id}`}>
-        <MainContainer ref={props.REF}>
+        <s.MainContainer ref={props.REF}>
             <img src={images[0]} alt="No img :("/>
 
-            <RecipeContainer>
-                <Header>{recipeName}</Header>
-                <RecipeInfo>
-                    <RecipeInfoRaw>
-                        <SvgComplexity/>
+            <s.RecipeContainer>
+                <s.Header>{recipeName}</s.Header>
+                <s.RecipeInfo>
+                    <s.RecipeInfoRaw>
+                        <s.SvgComplexity/>
                         <div>{complexity}</div>
-                    </RecipeInfoRaw>
-                    <RecipeInfoRaw>
-                        <SvgTime/>
+                    </s.RecipeInfoRaw>
+                    <s.RecipeInfoRaw>
+                        <s.SvgTime/>
                         <div>{totalTime ? `${totalTime} мин` : '-'}</div>
-                    </RecipeInfoRaw>
-                    <RecipeInfoRaw>
-                        <SvgPortions/>
+                    </s.RecipeInfoRaw>
+                    <s.RecipeInfoRaw>
+                        <s.SvgPortions/>
                         <div>12 порций</div>
-                    </RecipeInfoRaw>
-                </RecipeInfo>
-                <RecipeIngredients>
+                    </s.RecipeInfoRaw>
+                </s.RecipeInfo>
+                <s.RecipeIngredients>
                     <Ingredients ingredients={ingredients} maxRows={4}/>
-                </RecipeIngredients>
-                <ActionsContainer>
-                    <RateDiv>
+                </s.RecipeIngredients>
+                <s.ActionsContainer>
+                    <s.RateDiv>
                         <Rate style={{color: 'red'}} />
-                        <Votes>(0)</Votes>
-                    </RateDiv>
-                    <FavoritesDiv>
-                        <SvgFavorites/>
-                        <ShowOver680px>В избранное</ShowOver680px>
-                    </FavoritesDiv>
-                </ActionsContainer>
-            </RecipeContainer>
-            <StatsContainer>
-                <AgeDiv color={color} textColor={textColor}>
+                        <s.Votes>(0)</s.Votes>
+                    </s.RateDiv>
+                    <s.FavoritesDiv>
+                        <s.SvgFavorites/>
+                        <s.ShowOver680px>В избранное</s.ShowOver680px>
+                    </s.FavoritesDiv>
+                </s.ActionsContainer>
+            </s.RecipeContainer>
+            <s.StatsContainer>
+                <s.AgeDiv color={color} textColor={textColor}>
                     {allowedAge + 'm+'}
-                </AgeDiv>
-                 <SvgStats onClick = {() => dispatch(push(`/OMGWTF`))}/>
-            </StatsContainer>
-        </MainContainer>
+                </s.AgeDiv>
+                 <s.SvgStats onClick = {() => dispatch(push(`/OMGWTF`))}/>
+            </s.StatsContainer>
+        </s.MainContainer>
     </Link>
 );
 }

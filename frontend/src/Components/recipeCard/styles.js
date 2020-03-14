@@ -257,3 +257,24 @@ export const SvgFavorites = styled(Favorites)`
     height: 30px;
   }
 `;
+
+export const s = {
+  MainContainer,
+  Votes,
+  Header,
+  AgeDiv,
+  FavoritesDiv,
+  SvgFavorites,
+  SvgPortions,
+  SvgTime,
+  SvgComplexity,
+  RecipeContainer,
+  ActionsContainer,
+  RateDiv,
+  RecipeInfo,
+  RecipeInfoRaw,
+  RecipeIngredients,
+  ShowOver680px,
+  StatsContainer,
+  SvgStats,
+};

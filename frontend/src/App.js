@@ -5,11 +5,11 @@ import styled from 'styled-components';
 //ToDo: это звиздец, убрать этот импорт
 import "antd/dist/antd.css";
 import MainRecipesPage from 'Pages/main';
-import RecipePage from 'Components/recipePage';
+import RecipePage from 'Pages/recipe';
+import CollectionsPage from 'Pages/collections';
 import Menu from 'Components/menu';
 
-const StyledBody = styled.div`
-   //padding: 0 20px 20px 20px;
+const StyledBody = styled.main`
    background: linear-gradient(180deg, #27AAE1 0%, #FF8DEA 50%, #A844A1 100%) repeat fixed;
    min-height: 100vh;
    font-family: 'Roboto', sans-serif;
@@ -24,25 +24,25 @@ const StyledBody = styled.div`
    }
 `;
 
-function App() {
+export default function App() {
     return (
     <StyledBody>
         <Menu/>
+
         <Switch>
             <Redirect from="/" exact to="/recipes"/>
             <Redirect from='/recipes/' exact strict to='/recipes'/>
             <Route path="/recipe/:id" children={<RenderRecipePage/>} />
             <Route path='/recipes' exact component={MainRecipesPage}/>
+            <Route path='/collections' exact component={CollectionsPage}/>
             <Route path="*" render={() => <h1>Not Found Page</h1>}/>
+
         </Switch>
-        {/*<RecipesPage/>*/}
     </StyledBody>
   );
 }
 
 function RenderRecipePage() {
     let {id} = useParams();
-    return (<RecipePage id={id}/>);
+    return <RecipePage id={id}/>;
 }
-
-export default App;
