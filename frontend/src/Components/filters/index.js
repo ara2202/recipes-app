@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button, Input, Slider} from 'antd';
-import {RelativeWrapper, AbsoluteWrapper, FiltersContainer, FiltersRaw,
-    SearchContainer, StyledSelect, SvgProducts} from './styles';
+import {FilterTwoTone, FilterFilled, FilterOutlined} from '@ant-design/icons';
+import {s} from './styles';
 const { Search } = Input;
 
 //ToDo: Унифицировать компонент
@@ -46,6 +46,9 @@ export default function FiltersDropDown({onQueryChange, options1, options2}) {
         setAges(selectedAges);
     };
 
+    const filtersApplied = () =>
+        query?.length || products?.length || tags?.length || exclude?.length || ages[0]!==4 || ages[1] !==24;
+
     const styles = {
         container: styles => ({
             ...styles,
@@ -57,20 +60,34 @@ export default function FiltersDropDown({onQueryChange, options1, options2}) {
         })
     };
 
+    const iconStyle = {
+      fontSize: '24px',
+      color: filtersApplied() ? "#ED1E79" : 'white',
+    };
+
     return (
-     <RelativeWrapper>
-        <AbsoluteWrapper open={showFilters}>
-            <SearchContainer>
+     <s.RelativeWrapper>
+        <s.AbsoluteWrapper open={showFilters}>
+            <s.SearchContainer>
                 <Search placeholder="Поиск по ключевому слову" onChange={handleSearchChange} enterButton/>
-                <Button style={{marginLeft: '5px'}} type="primary" icon="filter" onClick={()=>setShowFilters(!showFilters)}/>
-            </SearchContainer>
+                <Button
+                    style={{marginLeft: '5px'}}
+                    type="primary"
+                    //icon={<FilterTwoTone style= {iconStyle} twoToneColor="#ED1E79"/>}
+                    //icon={<FilterFilled style={iconStyle}/>}
+                    icon={<FilterOutlined style={iconStyle}/>}
+                    //icon="filter"
+                    onClick={()=>setShowFilters(!showFilters)}
+                >
+                </Button>
+            </s.SearchContainer>
 
             {showFilters && (
-                <FiltersContainer>
+                <s.FiltersContainer>
                     <div style={{fontWeight: 'bold'}}>Обязательные продукты</div>
-                    <FiltersRaw>
-                        <SvgProducts/>
-                        <StyledSelect
+                    <s.FiltersRaw>
+                        <s.SvgProducts/>
+                        <s.StyledSelect
                             isMulti
                             name="products"
                             defaultValue={products}
@@ -83,12 +100,12 @@ export default function FiltersDropDown({onQueryChange, options1, options2}) {
                             onChange={handleProductChange}
                             styles={styles}
                          />
-                    </FiltersRaw>
+                    </s.FiltersRaw>
 
                     <div style={{fontWeight: 'bold'}}>Исключить продукты</div>
-                    <FiltersRaw>
-                        <SvgProducts/>
-                        <StyledSelect
+                    <s.FiltersRaw>
+                        <s.SvgProducts/>
+                        <s.StyledSelect
                             isMulti
                             name="exclude"
                             defaultValue={exclude}
@@ -101,12 +118,12 @@ export default function FiltersDropDown({onQueryChange, options1, options2}) {
                             onChange={handleExcludeChange}
                             styles={styles}
                          />
-                     </FiltersRaw>
+                     </s.FiltersRaw>
 
                     <div style={{fontWeight: 'bold'}}>Теги</div>
-                    <FiltersRaw>
-                        <SvgProducts/>
-                        <StyledSelect
+                    <s.FiltersRaw>
+                        <s.SvgProducts/>
+                        <s.StyledSelect
                             isMulti
                             name="tags"
                             defaultValue={tags}
@@ -119,7 +136,7 @@ export default function FiltersDropDown({onQueryChange, options1, options2}) {
                             onChange={handleTagsChange}
                             styles={styles}
                         />
-                     </FiltersRaw>
+                     </s.FiltersRaw>
 
                      <div style={{fontWeight: 'bold'}}>Возраст</div>
                      <Slider
@@ -131,12 +148,10 @@ export default function FiltersDropDown({onQueryChange, options1, options2}) {
                          style={{width: '100%'}}
                          marks = {{4: '4м', 6: '6м',12: '12м', 24: '24м' }}
                          dots
-                         //tooltipVisible
-                         //tooltipPlacement="bottom"
                      />
-                 </FiltersContainer>
+                 </s.FiltersContainer>
             )}
-        </AbsoluteWrapper>
-     </RelativeWrapper>
+        </s.AbsoluteWrapper>
+     </s.RelativeWrapper>
     )
 }

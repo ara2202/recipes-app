@@ -3,7 +3,7 @@ import Select from 'react-select';
 import {ReactComponent as Products} from 'Assets/svg/Products_2.svg';
 import {COLORS} from 'Components/commonStyles';
 
-export const RelativeWrapper = styled.div`
+const RelativeWrapper = styled.div`
   position: relative;
   height: 35px;
   width: 100%;
@@ -13,7 +13,7 @@ export const RelativeWrapper = styled.div`
   margin-bottom: 40px;
 `;
 
-export const AbsoluteWrapper = styled.div`
+const AbsoluteWrapper = styled.div`
     position: absolute;
     width: 100%;
     z-index: 5;
@@ -30,12 +30,12 @@ export const AbsoluteWrapper = styled.div`
     `}
 `;
 
-export const SearchContainer = styled.div`
+const SearchContainer = styled.div`
   display: flex;
   width: 100%;
 `;
 
-export const FiltersContainer = styled.div`
+const FiltersContainer = styled.div`
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -46,16 +46,16 @@ export const FiltersContainer = styled.div`
   padding: 10px;  
 `;
 
-export const FiltersRaw = styled.div`
+const FiltersRaw = styled.div`
   width: 100%;
   display: flex;
 `;
 
-export const StyledSelect = styled(Select)`
+const StyledSelect = styled(Select)`
   margin-bottom: 10px;
 `;
 
-export const SvgProducts = styled(Products)`
+const SvgProducts = styled(Products)`
     width: 38px;
     height: 38px;
     padding: 4px;
@@ -66,3 +66,13 @@ export const SvgProducts = styled(Products)`
     border: 1px solid;
     border-color: hsl(0,0%,80%) transparent hsl(0,0%,80%) hsl(0,0%,80%);
 `;
+
+export const s = {
+    RelativeWrapper,
+    AbsoluteWrapper,
+    SearchContainer,
+    FiltersContainer,
+    FiltersRaw,
+    StyledSelect,
+    SvgProducts,
+};
