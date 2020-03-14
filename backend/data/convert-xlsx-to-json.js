@@ -4,13 +4,6 @@ const path = require('path');
 const XLSX_dir = 'XLSX';
 const JSON_dir = 'JSON';
 
-console.log(`processing displayNames ...`);
-const workbookDN = XLSX.readFile(path.join(__dirname, XLSX_dir, 'productDisplayNames.xlsx'));
-const sheet_nameDN = workbookDN.SheetNames[0];
-const worksheetDN = workbookDN.Sheets[sheet_nameDN];
-const displayNames = XLSX.utils.sheet_to_json(worksheetDN);
-fs.writeFileSync(path.join(__dirname, JSON_dir, 'productDisplayNames.json'), JSON.stringify(displayNames));
-
 console.log(`processing products ...`);
 const workbookProducts = XLSX.readFile(path.join(__dirname, XLSX_dir, 'products.xlsx'));
 const sheet_namePr = workbookProducts.SheetNames[0];

@@ -1,7 +1,7 @@
 const Tag = require('../models/Tag');
 const Product = require('../models/Product');
 const Recipe = require('../models/Recipe');
-const ProductDisplayNames = require('../models/ProductDisplayName');
+const ProductDisplayName = require('../models/ProductDisplayName');
 const TagCategory = require('../models/TagCategory');
 
 const connection = require('../libs/mongooseConnection');
@@ -9,26 +9,18 @@ const connection = require('../libs/mongooseConnection');
 const tags = require('./JSON/tags.json');
 const products = require('./JSON/products.json');
 const recipes = require('./JSON/recipes.json');
-const displayNames = require('./JSON/productDisplayNames.json');
 
 (async () => {
   await Tag.deleteMany();
   await Product.deleteMany();
   await Recipe.deleteMany();
   await TagCategory.deleteMany();
-  await ProductDisplayNames.deleteMany();
+  await ProductDisplayName.deleteMany();
   
-  const productsMap = {/*
-  [fullName] : {productId, displayNameId }
-  */};
+  const displayNameMap = {/*[displayName]: <MongoDbDocument>*/};
+  const productsMap = {/*[fullName] : {productId, displayNameId }*/};
   const tagsMap = {/*[tagName]: id*/};
   const tagCategoryMap = {/*[tagCategory]: <MongoDbDocument>*/};
-  const displayNameMap = {/*[displayName]: id*/};
-
-  for (const dname of displayNames) {
-    const dn = await ProductDisplayNames.create(dname);
-    displayNameMap[dname.displayName] = dn.id;
-  }
 
   for (const {tagName, tagCategory, tagColor} of tags) {
     if (!tagCategoryMap[tagCategory]) {
@@ -48,13 +40,19 @@ const displayNames = require('./JSON/productDisplayNames.json');
     }
   }
 
-  for (const product of products) {
-    const displayName = product.displayName;
-    product.displayName = displayNameMap[product.displayName];
-    const pr = await Product.create(product);
-    productsMap[product.fullName] = {
+  for (const p of products) {
+    let displayNameDoc = displayNameMap[p.displayName];
+
+    if (!displayNameDoc) {
+      displayNameDoc = await ProductDisplayName.create({displayName: p.displayName});
+      displayNameMap[p.displayName] = displayNameDoc;
+    }
+
+    p.displayName = displayNameDoc.id;
+    const pr = await Product.create(p);
+    productsMap[p.fullName] = {
       id: pr.id,
-      displayNameId: displayNameMap[displayName]
+      displayNameId: displayNameDoc.id
     };
   }
 
@@ -86,7 +84,7 @@ const displayNames = require('./JSON/productDisplayNames.json');
 
   connection.close();
 
-  console.log(`${displayNames.length} product isplayNames have been saved in DB`);
+  console.log(`${Object.keys(displayNameMap).length} product displayNames have been saved in DB`);
   console.log(`${tags.length} tags have been saved in DB`);
   console.log(`${products.length} products have been saved in DB`);
   console.log(`${recipes.length} recipes have been saved in DB`);

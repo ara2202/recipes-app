@@ -14,17 +14,17 @@ const productSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        required: true
+        required: true,
     },
     pictogram: {
       type: String,
-      required: false
+      required: false,
     },
     minAgeAllowedInMonths: {
       type: Number,
-      required: true
+      required: true,
     },
-    recipesObj: Object
+    recipesObj: Object,
   });
 
 // productSchema.pre('save', async function(next) {
