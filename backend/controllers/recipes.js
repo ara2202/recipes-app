@@ -19,7 +19,15 @@ async function getRecipes(ctx)
     if (tags) reqObj.tags = {$all: tags.split(',')};
     if (productIds) dnRequestObj.$all = productIds.split(',');
     if (exclude) dnRequestObj.$nin = exclude.split(',');
-    if (productIds || exclude) reqObj['ingredients.displayName'] = dnRequestObj;
+    if (!productIds && exclude) reqObj['ingredients.displayName'] = dnRequestObj;
+    if (productIds) reqObj.$or = [
+        {
+            ['ingredients.displayName']: dnRequestObj,
+        },
+        {
+            ['optionalIngredients.displayName']: {$all: productIds.split(',')}
+        },
+    ];
 
     //ToDo: Убрать задержку
     //await timeout( 500);
