@@ -22,7 +22,7 @@ export default function FiltersDropDown({onQueryChange, options1, options2}) {
     const makeQueryString = (query, products, tags, exclude, ages) =>
         `${query ? `&query=${query}` : ''}` +
         `${products && products.length ? `&productIds=${products.map(i => i._id)}` : ''}` +
-        `${tags && tags.length ? `&tags=${tags.map(i => i._id)}` : ''}` +
+        `${tags && tags.length ? `&tags=${tags.map(i => i.id)}` : ''}` +
         `${exclude && exclude.length ? `&exclude=${exclude.map(i => i._id)}` : ''}` +
         `${ages && ages.length ? `&minAge=${ages[0]}&maxAge=${ages[1]}` : ''}`;
 
