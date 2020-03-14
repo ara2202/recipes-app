@@ -1,17 +1,21 @@
 const mongoose = require('mongoose');
 const connection = require('../libs/mongooseConnection');
+const ObjectId = mongoose.Schema.Types.ObjectId;
 
-const tagsSchema = new mongoose.Schema({
+const tagSchema = new mongoose.Schema({
     tagName: {
         type: String,
         required: true,
         unique: true,
     },
-    tagCategory: {
-        type: String,
+    category: {
+        type: ObjectId,
+        ref: 'TagCategory',
         required: true,
+        autopopulate: {select: 'tagColor'},
     },
-    tagColor: String,
 });
 
-module.exports = connection.model('Tag', tagsSchema);
+tagSchema.plugin(require('mongoose-autopopulate'));
+
+module.exports = connection.model('Tag', tagSchema);

@@ -68,7 +68,7 @@ function RecipePage({recipe, id}) {
                 <s.Tags> {/*ToDo: переделать*/}
                 {tags && tagsInStore &&
                     tags.map(tagId => {
-                        const tag = tagsInStore.find(i => i._id === tagId);
+                        const tag = tagsInStore.find(i => i.id === tagId);
                         const color = tag?.tagColor;
                         const textColor = getTextColor(color);
                         return (

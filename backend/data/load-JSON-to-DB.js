@@ -1,7 +1,8 @@
 const Tag = require('../models/Tag');
 const Product = require('../models/Product');
 const Recipe = require('../models/Recipe');
-const ProductDisplayNames = require('../models/ProductDisplayNames');
+const ProductDisplayNames = require('../models/ProductDisplayName');
+const TagCategory = require('../models/TagCategory');
 
 const connection = require('../libs/mongooseConnection');
 
@@ -14,10 +15,14 @@ const displayNames = require('./JSON/productDisplayNames.json');
   await Tag.deleteMany();
   await Product.deleteMany();
   await Recipe.deleteMany();
+  await TagCategory.deleteMany();
   await ProductDisplayNames.deleteMany();
   
-  const productsMap = {/* [fullName] : id*/};
+  const productsMap = {/*
+  [fullName] : {productId, displayNameId }
+  */};
   const tagsMap = {/*[tagName]: id*/};
+  const tagCategoryMap = {/*[tagCategory]: <MongoDbDocument>*/};
   const displayNameMap = {/*[displayName]: id*/};
 
   for (const dname of displayNames) {
@@ -25,9 +30,22 @@ const displayNames = require('./JSON/productDisplayNames.json');
     displayNameMap[dname.displayName] = dn.id;
   }
 
-  for (const tag of tags) {
-    const tg = await Tag.create(tag);
-    tagsMap[tag.tagName] = tg.id;
+  for (const {tagName, tagCategory, tagColor} of tags) {
+    if (!tagCategoryMap[tagCategory]) {
+        const newTagCategory = await TagCategory.create({ tagCategory, tagColor });
+        const newTag = await Tag.create({tagName, category: newTagCategory.id});
+
+        newTagCategory.tags.push(newTag.id);
+        await newTagCategory.save();
+        tagsMap[tagName] = newTag.id;
+        tagCategoryMap[tagCategory] = newTagCategory;
+    } else {
+        const category = tagCategoryMap[tagCategory];
+        const newTag = await Tag.create({tagName, category: category.id});
+        tagsMap[tagName] = newTag.id;
+        category.tags.push(newTag.id);
+        await category.save();
+    }
   }
 
   for (const product of products) {

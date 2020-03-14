@@ -12,7 +12,6 @@ mongoose.set('debug', true);
 
 mongoose.plugin(beautifyUnique);
 
-console.log (config.get('mongodb.uri'));
 module.exports = mongoose.createConnection(config.get('mongodb.uri'));
 
 //mongoose.connect(config.get('mongodb.uri'), { useNewUrlParser: true, useUnifiedTopology: true});

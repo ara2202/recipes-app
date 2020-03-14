@@ -1,4 +1,4 @@
-const DisplayName = require('../models/ProductDisplayNames');
+const DisplayName = require('../models/ProductDisplayName');
 
 async function getProductDisplayNames(ctx)
 {
@@ -9,4 +9,4 @@ async function getProductDisplayNames(ctx)
 
 module.exports = {
     getProductDisplayNames
-  }
+  };
