@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import {ReactComponent as SvgLogo} from 'Assets/svg/Logo_mamas_sapiens_UPD.svg';
-import {COLORS} from 'Components/commonStyles';
-import {Link} from 'react-router-dom';
+import { ReactComponent as SvgLogo } from 'Assets/svg/Logo_mamas_sapiens_UPD.svg';
+import { COLORS } from 'Components/commonStyles';
+import { Link } from 'react-router-dom';
 
 export const HeaderContainer = styled.header`
   height: 80px;
@@ -12,7 +12,11 @@ export const HeaderContainer = styled.header`
   display: grid;
   grid-template-columns: auto 4fr 1fr;
   align-items: center;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0 , 0.1));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.1)
+  );
 `;
 
 export const Logo = styled(SvgLogo)`
@@ -29,12 +33,11 @@ export const MenuContainer = styled.nav`
   justify-content: space-evenly;
   align-items: center;
   color: white;
-  
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: ${props => props.isActive ? COLORS.SELECT_COLOR : 'white'};
+  color: ${props => (props.isActive ? COLORS.SELECT_COLOR : 'white')};
 `;
 
 export const LoginButton = styled.button`
@@ -53,4 +56,3 @@ export const LoginButton = styled.button`
     color: black;
   }
 `;
-

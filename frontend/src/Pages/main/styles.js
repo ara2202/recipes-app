@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {COLORS} from 'Components/commonStyles';
+import { COLORS } from 'Components/commonStyles';
 
 export const RecipesContainer = styled.div`
   display: grid;
@@ -17,10 +17,10 @@ export const RecipesContainer = styled.div`
 `;
 
 export const LoadingDiv = styled.div`
-    display: flex;
-    justify-content: center;
-    margin: 20px 20px 0 0;
-    border-radius: 20px;
-    width: 600px;
-    background: ${COLORS.BACKGROUND_COLOR};
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px 0 0;
+  border-radius: 20px;
+  width: 600px;
+  background: ${COLORS.BACKGROUND_COLOR};
 `;

@@ -1,4 +1,4 @@
-import {call, put, takeEvery} from 'redux-saga/effects';
+import { call, put, takeEvery } from 'redux-saga/effects';
 import APIService from '../../Services/api';
 import produce from 'immer';
 import { createSelector } from 'reselect';
@@ -13,26 +13,26 @@ export const FETCH_ALL_SUCCESS = `${prefix}/FETCH_ALL_SUCCESS`;
 
 /*** Reducer ***/
 const initialState = [];
-const reducer = produce((draft, {type, payload}) => {
-    // eslint-disable-next-line default-case
-    switch (type) {
-        case FETCH_ALL_SUCCESS:
-            return payload;
-    }
+const reducer = produce((draft, { type, payload }) => {
+  // eslint-disable-next-line default-case
+  switch (type) {
+    case FETCH_ALL_SUCCESS:
+      return payload;
+  }
 }, initialState);
 export default reducer;
 
 /*** Selectors ***/
-export const stateSelector = (state) => state[moduleName];
+export const stateSelector = state => state[moduleName];
 export const selectPdnById = (state, id) => id;
 export const selectDisplayNameById = createSelector(
-    [stateSelector, selectPdnById],
-    (items, id) => items.find(item => item._id === id).displayName
+  [stateSelector, selectPdnById],
+  (items, id) => items.find(item => item._id === id).displayName,
 );
 
 /*** Action Creators ***/
 export const fetchAllProductDisplayNames = () => ({
-  type: FETCH_ALL_REQUEST
+  type: FETCH_ALL_REQUEST,
 });
 
 /*** Sagas ***/
@@ -41,7 +41,7 @@ export function* fetchAllSaga() {
 
   yield put({
     type: FETCH_ALL_SUCCESS,
-    payload: data
+    payload: data,
   });
 }
 
