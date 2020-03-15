@@ -22,6 +22,11 @@
     "styled-components": "^5.0.1"
   },
   "proxy": "http://localhost:4000",
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ]
+   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -44,6 +49,14 @@
     ]
   },
   "devDependencies": {
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "prettier": "^1.19.1",
     "redux-logger": "^3.0.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
