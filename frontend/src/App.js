@@ -17,12 +17,6 @@ const StyledBody = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media (max-width: 620px) {
-    padding: 10px;
-  }
-  @media (max-width: 420px) {
-    padding: 0;
-  }
 `;
 
 export default function App() {

@@ -1,9 +1,13 @@
 import styled from 'styled-components';
-import { ReactComponent as SvgLogo } from 'Assets/svg/Logo_mamas_sapiens_UPD.svg';
+import { ReactComponent as SvgLogo } from 'Assets/svg/menu/LOGO_MSrecepies.svg';
+
 import { COLORS } from 'Components/commonStyles';
 import { Link } from 'react-router-dom';
+const colorFunc = props => (props.isActive ? COLORS.SELECT_COLOR : 'white');
 
-export const HeaderContainer = styled.header`
+const HeaderContainer = styled.header`
+  position: sticky;
+  top: 0;
   height: 80px;
   width: 100%;
   font-size: 16px;
@@ -19,28 +23,51 @@ export const HeaderContainer = styled.header`
   );
 `;
 
-export const Logo = styled(SvgLogo)`
+const Logo = styled(SvgLogo)`
   width: 100%;
   margin-left: 10px;
   height: auto;
   max-width: 150px;
-  min-width: 80px;
+  @media (max-width: 900px) {
+    max-width: 100px;
+  }
+  @media (max-width: 500px) {
+    max-width: 90px;
+  }
   fill: white;
 `;
 
-export const MenuContainer = styled.nav`
+export const Svg = styled.svg`
+  display: none;
+  width: auto;
+  fill: ${colorFunc};
+  height: 50px;
+  @media (max-width: 900px) {
+    display: block;
+  }
+  @media (max-width: 500px) {
+    height: 30px;
+  }
+  &:hover {
+    fill: ${COLORS.SELECT_COLOR};
+  }
+`;
+
+const MenuContainer = styled.nav`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   color: white;
 `;
 
-export const StyledLink = styled(Link)`
+const StyledLink = styled(Link)`
   text-decoration: none;
-  color: ${props => (props.isActive ? COLORS.SELECT_COLOR : 'white')};
+  user-select: none;
+  -webkit-user-drag: none;
+  color: ${colorFunc};
 `;
 
-export const LoginButton = styled.button`
+const LoginButton = styled.button`
   color: white;
   background-color: transparent;
   width: min-content;
@@ -55,4 +82,23 @@ export const LoginButton = styled.button`
     background-color: white;
     color: black;
   }
+  @media (max-width: 900px) {
+    display: none;
+  }
 `;
+
+const Label = styled.div`
+  @media (max-width: 900px) {
+    display: none;
+  }
+`;
+
+export const s = {
+  LoginButton,
+  StyledLink,
+  MenuContainer,
+  Logo,
+  HeaderContainer,
+  Label,
+  Svg,
+};

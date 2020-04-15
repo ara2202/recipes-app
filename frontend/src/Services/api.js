@@ -1,5 +1,10 @@
 import axios from 'axios';
 
+const instance = axios.create({
+  baseURL: 'http://localhost:4000/api/',
+  timeout: 5000,
+});
+
 export const APIServices = {
   async getProductNames() {
     const res = await axios('http://localhost:4000/api/productDisplayNames');
@@ -19,14 +24,16 @@ export const APIServices = {
     }));
   },
 
-  async getRecipes(query = 'limit=10&page=1') {
-    const res = await axios(`http://localhost:4000/api/recipes?${query}`);
-    return res.data;
+  getTagsCollection() {
+    return instance.get('tagsCollection');
   },
 
-  async getRecipeById(id) {
-    const res = await axios(`http://localhost:4000/api/recipe?id=${id}`);
-    return res.data;
+  getRecipes(query = 'limit=10&page=1') {
+    return axios(`http://localhost:4000/api/recipes?${query}`);
+  },
+
+  getRecipeById(id) {
+    return axios(`http://localhost:4000/api/recipe?id=${id}`);
   },
 };
 

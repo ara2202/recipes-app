@@ -1,14 +1,15 @@
 import { all, call, put, takeEvery, debounce } from 'redux-saga/effects';
-import APIService from '../../Services/api';
 import produce from 'immer';
 import { createSelector } from 'reselect';
+import APIService from 'Services/api';
 
 /*** Constants ***/
 export const moduleName = 'recipes';
 export const appName = 'Recipes';
 const prefix = `${appName}/${moduleName}`;
 
-export const FETCH_REQUEST = `${prefix}/FETCH_REQUEST`;
+export const FETCH_INITIAL_REQUEST = `${prefix}/FETCH_INITIAL_REQUEST`;
+export const FETCH_ON_QUERY_REQUEST = `${prefix}/FETCH_ON_QUERY_REQUEST`;
 export const FETCH_MORE_REQUEST = `${prefix}/FETCH_MORE_REQUEST`;
 export const FETCH_ONE_REQUEST = `${prefix}/FETCH_ONE_REQUEST`;
 export const FETCH_SUCCESS = `${prefix}/FETCH_SUCCESS`;
@@ -88,8 +89,13 @@ export const selectRecipeById = createSelector(
 );
 
 /*** Action Creators ***/
-export const fetchNewRecipesAction = query => ({
-  type: FETCH_REQUEST,
+export const fetchOnPageLoadAction = query => ({
+  type: FETCH_INITIAL_REQUEST,
+  query,
+});
+
+export const fetchOnQueryChangeAction = query => ({
+  type: FETCH_ON_QUERY_REQUEST,
   query,
 });
 
@@ -107,9 +113,9 @@ export const fetchSingleRecipeAction = id => ({
 export function* fetchSaga({ type, query }) {
   yield put({ type: LOADING });
   try {
-    const data = yield call(APIService.getRecipes, query);
+    const { data } = yield call(APIService.getRecipes, query);
     const successAction = {
-      type: type === FETCH_REQUEST ? FETCH_SUCCESS : FETCH_MORE_SUCCESS,
+      type: type === FETCH_MORE_REQUEST ? FETCH_MORE_SUCCESS : FETCH_SUCCESS,
       payload: data,
     };
     yield put(successAction);
@@ -122,7 +128,7 @@ export function* fetchSaga({ type, query }) {
 export function* fetchOneRecipeSaga({ id }) {
   yield put({ type: LOADING });
   try {
-    const data = yield call(APIService.getRecipeById, id);
+    const { data } = yield call(APIService.getRecipeById, id);
     yield put({
       type: FETCH_ONE_SUCCESS,
       payload: data,
@@ -135,7 +141,8 @@ export function* fetchOneRecipeSaga({ id }) {
 
 export function* saga() {
   yield all([
-    debounce(500, [FETCH_REQUEST, FETCH_MORE_REQUEST], fetchSaga),
+    takeEvery([FETCH_INITIAL_REQUEST, FETCH_MORE_REQUEST], fetchSaga),
+    debounce(300, FETCH_ON_QUERY_REQUEST, fetchSaga),
     takeEvery(FETCH_ONE_REQUEST, fetchOneRecipeSaga),
   ]);
 }

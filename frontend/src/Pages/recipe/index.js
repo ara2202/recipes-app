@@ -12,21 +12,22 @@ import {
   stateSelector as selectProductDisplayNames,
 } from 'Redux/ducks/productDisplayNames';
 import Ingredients from 'Components/Ingredients';
+import CollapsiblePanel from 'Components/collapsible-panel';
 
-import { s } from './styles';
+import s from './styles';
 
 function RecipePage({ recipe, id }) {
   const dispatch = useDispatch();
   const tagsInStore = useSelector(selectTags);
   const productDisplayNames = useSelector(selectProductDisplayNames);
+  useEffect(() => {
+    if (!tagsInStore.length) dispatch(fetchAllTags());
+    if (!productDisplayNames.length) dispatch(fetchAllProductDisplayNames());
+  }, [dispatch]);
 
   useEffect(() => {
     if (!recipe) dispatch(fetchSingleRecipeAction(id));
-    if (!tagsInStore.length) dispatch(fetchAllTags());
-    if (!productDisplayNames.length) dispatch(fetchAllProductDisplayNames());
   }, [recipe, dispatch, id]);
-
-  console.log(recipe);
 
   const {
     recipeName,
@@ -42,13 +43,12 @@ function RecipePage({ recipe, id }) {
     originUrl,
     fridgeStorage,
     freezerStorage,
-    _id,
-  } = recipe ? recipe : {};
+  } = recipe || {};
 
   const color = getAgeColor(allowedAge);
   const textColor = getTextColor(color);
-  const nextArrow = () => <div></div>;
-  const prevArrow = () => <div></div>;
+  const nextArrow = () => <s.SvgRightSlider />;
+  const prevArrow = () => <s.SvgLeftSlider />;
 
   return (
     <s.PageContainer>
@@ -124,25 +124,46 @@ function RecipePage({ recipe, id }) {
       </s.Footer>
 
       <s.Content>
-        <s.IngredientsContainer>
-          <h2>Ингредиенты</h2>
+        <CollapsiblePanel key="Ingredients" title="Ингредиенты">
           {ingredients && <Ingredients ingredients={ingredients} />}
-          <h3>а ещё вы можете добавить...</h3>
+        </CollapsiblePanel>
+        <CollapsiblePanel key="More" title="а ещё вы можете добавить...">
           {optionalIngredients && (
             <Ingredients ingredients={optionalIngredients} />
           )}
-        </s.IngredientsContainer>
+        </CollapsiblePanel>
 
-        <s.TextContainer>
-          <h2>Приготовление</h2>
-          <s.Text>
-            <p>{recipeText}</p>
-          </s.Text>
-        </s.TextContainer>
-        <div>{fridgeStorage}</div>
-        <div>{freezerStorage}</div>
-        <div>{author}</div>
-        <div>{originUrl}</div>
+        <CollapsiblePanel key="receipt" title="Приготовление">
+          <section>{recipeText}</section>
+          <div className="recipeRaw">
+            <div>Автор рецепта</div>
+            <div>{author}</div>
+          </div>
+
+          <div className="recipeRaw">
+            <div>Ссылка на оригинал</div>
+            <div>{originUrl}</div>
+          </div>
+        </CollapsiblePanel>
+
+        <CollapsiblePanel key="storage" title="Хранение">
+          <s.StorageInfo>
+            <s.Fridge>
+              <s.SvgFridge />
+              <div>
+                <div>Хранение в холодильнике:</div>
+                <div>{fridgeStorage}</div>
+              </div>
+            </s.Fridge>
+            <s.Freezer>
+              <s.SvgFreezer />
+              <div>
+                <div>Хранение в морозильной камере:</div>
+                <div>{freezerStorage}</div>
+              </div>
+            </s.Freezer>
+          </s.StorageInfo>
+        </CollapsiblePanel>
       </s.Content>
       <s.Close onClick={() => history.push('/')}>X</s.Close>
     </s.PageContainer>

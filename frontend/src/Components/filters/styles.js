@@ -5,24 +5,40 @@ import { COLORS } from 'Components/commonStyles';
 
 const RelativeWrapper = styled.div`
   position: relative;
-  height: 35px;
+  height: 150px;
   width: 100%;
   display: flex;
   justify-content: center;
   max-width: 700px;
   margin-bottom: 40px;
+  @media (max-width: 900px) {
+    height: 35px;
+  }
+  img {
+    position: absolute;
+    top: -40px;
+    left: -107px;
+    width: 1000px;
+    height: auto;
+    @media (max-width: 900px) {
+      display: none;
+    }
+  }
 `;
 
 const AbsoluteWrapper = styled.div`
   position: absolute;
   width: 100%;
   z-index: 5;
-  top: 0;
+  top: 112px;
   background: transparent;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   max-height: 46px;
+  @media (max-width: 900px) {
+    top: 15px;
+  }
   ${props =>
     props.open &&
     css`
@@ -46,6 +62,10 @@ const FiltersContainer = styled.div`
   margin-top: 6px;
   padding: 10px;
 `;
+const Header = styled.div`
+  font-weight: bold;
+  user-select: none;
+`;
 
 const FiltersRaw = styled.div`
   width: 100%;
@@ -68,12 +88,27 @@ const SvgProducts = styled(Products)`
   border-color: hsl(0, 0%, 80%) transparent hsl(0, 0%, 80%) hsl(0, 0%, 80%);
 `;
 
+export const TotalInfo = styled.div`
+  color: black;
+  font-style: italic;
+  width: 100%;
+  max-width: 700px;
+  user-select: none;
+  position: absolute;
+  top: 92px;
+  @media (max-width: 900px) {
+    top: -5px;
+  }
+`;
+
 export const s = {
   RelativeWrapper,
   AbsoluteWrapper,
   SearchContainer,
   FiltersContainer,
   FiltersRaw,
+  Header,
   StyledSelect,
   SvgProducts,
+  TotalInfo,
 };

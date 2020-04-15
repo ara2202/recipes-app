@@ -11,7 +11,7 @@ export const MainContainer = styled.div`
   grid-template-columns: 160px auto 90px;
   grid-gap: 20px;
   border: 2px solid transparent;
-  border-radius: 25.76px;
+  border-radius: 26px;
   background: ${COLORS.BACKGROUND_COLOR};
   box-sizing: border-box;
   user-select: none;

@@ -1,0 +1,46 @@
+:local
+  .CollapsiblePanel
+    margin 0 20px
+    padding 16px 0
+    border-bottom 1px solid #EDEDED
+    &:last-child
+      border-bottom none
+
+  ._active
+    & .Body
+      margin-top 16px
+      max-height 100%
+
+    & .ArrowIcon
+      transform rotate(180deg)
+
+  ._disabled
+    & .Header
+      cursor unset
+
+      &Title
+        color #C4C4C4
+
+  .Header
+    display flex
+    justify-content space-between
+    align-items center
+    cursor pointer
+
+    &Title
+      color #262626
+      font-size 18px
+      font-family RamblerMedium
+      line-height 1.56
+
+  .Body
+    overflow hidden
+    max-height 0
+
+  .ArrowIcon
+    width 14px
+    height 8px
+    transition transform .3s
+    fill #7D7D7D
+
+

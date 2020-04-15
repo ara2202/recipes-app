@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 import { ReactComponent as Stats } from 'Assets/svg/Stats.svg';
 import { ReactComponent as Favorites } from 'Assets/svg/Favorites_color_2.svg';
+import { ReactComponent as LeftSlider } from 'Assets/svg/left_slider.svg';
+import { ReactComponent as RightSlider } from 'Assets/svg/right_slider.svg';
+import { ReactComponent as SvgFridge } from 'Assets/svg/icon_fridge.svg';
+import { ReactComponent as SvgFreezer } from 'Assets/svg/icon_frost.svg';
 import { COLORS } from 'Components/commonStyles';
 
 const PageContainer = styled.div`
   position: relative;
   max-width: 1000px;
-  height: calc(100vh - 96px);
+  //height: calc(100vh - 96px);
   display: grid;
   grid-template-columns: 3fr 7fr;
   grid-template-rows: min-content auto auto;
@@ -16,7 +20,7 @@ const PageContainer = styled.div`
     'image      content'
     'footer     content';
   background-color: ${COLORS.BACKGROUND_COLOR};
-  border-radius: 25.76px;
+  border-radius: 26px;
   padding: 30px;
 `;
 
@@ -88,6 +92,31 @@ const Info = styled.div`
   padding: 5px 12px;
 `;
 
+const StorageInfo = styled.div`
+  width: 100%;
+  display: flex;
+`;
+
+const Fridge = styled.div`
+  width: 50%;
+  display: flex;
+  //justify-content: space-between;
+  & svg {
+    width: 50px;
+    height: 50px;
+  }
+`;
+
+const Freezer = styled.div`
+  width: 50%;
+  display: flex;
+  //justify-content: space-between;
+  & svg {
+    width: 50px;
+    height: 50px;
+  }
+`;
+
 const Image = styled.figure`
   img {
     width: 100%;
@@ -123,35 +152,7 @@ const Content = styled.article`
   grid-area: content;
   display: flex;
   flex-direction: column;
-`;
-
-const IngredientsContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-  h2,
-  h3 {
-    margin-left: auto;
-  }
-`;
-
-const TextContainer = styled.div`
-  position: relative;
-  display: flex;
-  justify-content: flex-end;
-  height: 100%;
-`;
-
-const Text = styled.section`
-  position: absolute;
-  top: 35px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  p {
+  & p {
     white-space: pre-wrap;
     line-height: 20px;
   }
@@ -213,6 +214,16 @@ const SvgFavorites = styled(Favorites)`
   //}
 `;
 
+const SvgLeftSlider = styled(LeftSlider)`
+  width: 30px;
+  height: 30px;
+`;
+
+const SvgRightSlider = styled(RightSlider)`
+  width: 30px;
+  height: 30px;
+`;
+
 const FavoritesButton = styled.div`
   display: flex;
   background-color: #2e3192;
@@ -236,7 +247,7 @@ const RateDiv = styled.div`
   font-size: 16px;
 `;
 
-export const s = {
+export default {
   PageContainer,
   AgeDiv,
   Header,
@@ -244,18 +255,22 @@ export const s = {
   Content,
   Image,
   ImageAndTags,
-  IngredientsContainer,
   Rating,
   Tag,
   Tags,
-  Text,
   Votes,
-  TextContainer,
   Footer,
   StatsButton,
   SvgStats,
+  SvgLeftSlider,
+  SvgRightSlider,
   FavoritesButton,
   SvgFavorites,
   RateDiv,
   Info,
+  SvgFridge,
+  SvgFreezer,
+  StorageInfo,
+  Freezer,
+  Fridge,
 };

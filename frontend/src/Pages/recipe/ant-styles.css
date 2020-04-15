@@ -1,33 +1,48 @@
 .ant-carousel .slick-next {
-  right: -10px;
+  right: -5px;
+  top: 47%;
 }
 
 .ant-carousel .slick-prev {
-  left: 0;
-}
-
-.ant-carousel .slick-next::before {
-  content: '>';
-}
-
-.ant-carousel .slick-prev::before {
-  content: '<';
+  left: -5px;
+  top: 47%;
 }
 
 .ant-carousel .slick-next,
 .ant-carousel .slick-prev {
-  font-size: 14px;
-  color: black;
   z-index: 1;
+  fill: #cbcbcb;
 }
 
 .ant-carousel .slick-prev:hover,
 .ant-carousel .slick-next:hover {
-  color: cornflowerblue;
+  fill: #27aae1;
+}
+
+.ant-carousel .slick-dots-bottom {
+  bottom: 2px;
 }
 
 .ant-carousel .slick-dots li button {
-  background: aqua;
+  background: #cbcbcb;
+  height: 7px;
+  opacity: 1;
+  border-radius: 50%;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  background: transparent;
+}
+
+.ant-carousel .slick-dots li.slick-active {
+  width: 7px;
+  background: #27aae1;
+}
+
+.ant-carousel .slick-dots li {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
 }
 
 .ant-rate-star-first,

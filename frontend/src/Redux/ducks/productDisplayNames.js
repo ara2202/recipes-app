@@ -1,7 +1,7 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
-import APIService from '../../Services/api';
 import produce from 'immer';
 import { createSelector } from 'reselect';
+import APIService from 'Services/api';
 
 /*** Constants ***/
 export const moduleName = 'productDisplayNames';
