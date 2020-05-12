@@ -20,6 +20,7 @@ const RelativeWrapper = styled.div`
     left: -107px;
     width: 1000px;
     height: auto;
+    -webkit-user-drag: none;
     @media (max-width: 900px) {
       display: none;
     }

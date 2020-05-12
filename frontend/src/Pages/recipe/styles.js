@@ -10,7 +10,6 @@ import { COLORS } from 'Components/commonStyles';
 const PageContainer = styled.div`
   position: relative;
   max-width: 1000px;
-  //height: calc(100vh - 96px);
   display: grid;
   grid-template-columns: 3fr 7fr;
   grid-template-rows: min-content auto auto;
@@ -21,15 +20,20 @@ const PageContainer = styled.div`
     'footer     content';
   background-color: ${COLORS.BACKGROUND_COLOR};
   border-radius: 26px;
-  padding: 30px;
+  padding: 30px 15px 30px 30px;
+  min-height: calc(100vh - 90px);
+  @media (max-width: 750px) {
+    padding: 30px 0 15px 15px;
+  }
 `;
 
 const Header = styled.header`
   grid-area: header;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 380px auto 100px;
   max-height: 70px;
   align-items: center;
+  padding-right: 15px;
   h1 {
     margin: 0;
   }
@@ -40,6 +44,9 @@ const Rating = styled.div`
   display: flex;
   color: #ccc;
   font-size: 18px;
+  @media (max-width: 750px) {
+    grid-column-start: 1;
+  }
 `;
 
 const Votes = styled.div`
@@ -100,7 +107,7 @@ const StorageInfo = styled.div`
 const Fridge = styled.div`
   width: 50%;
   display: flex;
-  //justify-content: space-between;
+
   & svg {
     width: 50px;
     height: 50px;
@@ -110,7 +117,7 @@ const Fridge = styled.div`
 const Freezer = styled.div`
   width: 50%;
   display: flex;
-  //justify-content: space-between;
+
   & svg {
     width: 50px;
     height: 50px;
@@ -152,6 +159,9 @@ const Content = styled.article`
   grid-area: content;
   display: flex;
   flex-direction: column;
+  max-height: calc(100vh - 210px);
+  overflow-y: scroll;
+  padding-right: 15px;
   & p {
     white-space: pre-wrap;
     line-height: 20px;
